@@ -46,7 +46,7 @@ namespace Lab03
             else if (result == "2")
             {
                 Console.WriteLine("Enter you happy nomnom (>^.^)>");
-                string content = Console.ReadLine();
+                string[] content = new string[] { Console.ReadLine() };
                 AddItem(filePath, content);
                 return true;
             }
@@ -75,11 +75,12 @@ namespace Lab03
           
             return response;
         }
-        public static void AddItem(string input, string content)
+        public static void AddItem(string input, string[] content)
         {
             //Console.Clear();
-           // Console.WriteLine("Enter an Item: ")
-             File.WriteAllText(input, content);
+            // Console.WriteLine("Enter an Item: ")
+            File.AppendAllLines (input, content);
+       
 
             Console.WriteLine("item added");
 
