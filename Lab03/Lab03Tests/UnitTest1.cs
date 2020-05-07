@@ -12,21 +12,29 @@ namespace Lab03Tests
         [Fact]
         public void CanReadGood()
         {
-            string path = "NomsList.txt";
-            string lists = "joy to the lab";
+            //Arrange
+            string path = @"Assets/list.txt";
+            string food = "I need: nutella, salad, milk, eggs, bacon";
+
+            //act
+
            // File.WriteAllText(path, lists);
             string result = NomsList.ViewList(path);
-            Assert.Equal(lists,result);
+            Assert.Equal(food,result);
         }
+
+        /*
         [Fact]
         public void CanWriteGood()
         {
-            string path = "NomsList.txt";
+            string path = "Assets/list.txt";
             string lists = "joy to the lab";
             string result = File.ReadAllText(path);
             NomsList.AddItem(path, lists);
             Assert.Equal(lists, result);
         }
+        */
+        //public void CanEraseGood()
 
     }
 }

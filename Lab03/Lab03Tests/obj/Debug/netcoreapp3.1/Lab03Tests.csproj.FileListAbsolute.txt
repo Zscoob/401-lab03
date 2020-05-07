@@ -97,3 +97,4 @@ C:\Users\james\Desktop\deltav401\401-lab03\Lab03\Lab03Tests\obj\Debug\netcoreapp
 C:\Users\james\Desktop\deltav401\401-lab03\Lab03\Lab03Tests\obj\Debug\netcoreapp3.1\Lab03Tests.dll
 C:\Users\james\Desktop\deltav401\401-lab03\Lab03\Lab03Tests\obj\Debug\netcoreapp3.1\Lab03Tests.pdb
 C:\Users\james\Desktop\deltav401\401-lab03\Lab03\Lab03Tests\obj\Debug\netcoreapp3.1\Lab03Tests.genruntimeconfig.cache
+C:\Users\james\Desktop\deltav401\401-lab03\Lab03\Lab03Tests\bin\Debug\netcoreapp3.1\Assets\list.txt

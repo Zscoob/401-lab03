@@ -10,30 +10,44 @@ namespace Lab03
             bool displayMenu = true;
             while (displayMenu == true)
             {
-                displayMenu = MainMenu();
+               displayMenu = MainMenu();
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+      
+      
         public static bool MainMenu()
         {
-            Console.Clear();
+           // Console.Clear();
             Console.WriteLine("Choose an option");
             Console.WriteLine("1) View List");
             Console.WriteLine("2) Add an item");
             Console.WriteLine("3) Delete an item");
             Console.WriteLine("4) Exit");
 
-            string FilePath = "NomsList.txt";
+            string filePath = @"Assets/list.txt";
             string result = Console.ReadLine();
             if (result == "1")
             {
-                ViewList(FilePath);
+               
+                Console.WriteLine(ViewList(filePath));
                 return true;
             }
             else if (result == "2")
             {
                 Console.WriteLine("Enter you happy nomnom (>^.^)>");
                 string content = Console.ReadLine();
-                AddItem(FilePath, content);
+                AddItem(filePath, content);
                 return true;
             }
             else if (result == "3")
@@ -51,15 +65,15 @@ namespace Lab03
             }
 
         }
-
+        
         public static string ViewList(string input)
         {
             
-           // Console.Clear();
+
             string response = File.ReadAllText(input);
-
+           
+          
             return response;
-
         }
         public static void AddItem(string input, string content)
         {

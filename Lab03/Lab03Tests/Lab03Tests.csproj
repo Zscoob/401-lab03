@@ -17,4 +17,10 @@
     <ProjectReference Include="..\Lab03\Lab03.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Assets\list.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
