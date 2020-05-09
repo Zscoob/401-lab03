@@ -15,16 +15,6 @@ namespace Lab03
         }
 
 
-
-
-
-
-
-
-
-
-
-      
       
         public static bool MainMenu()
         {
@@ -75,11 +65,11 @@ namespace Lab03
           
             return response;
         }
-        public static void AddItem(string input, string[] content)
+        public static void AddItem(string path, string[] content)
         {
             //Console.Clear();
             // Console.WriteLine("Enter an Item: ")
-            File.AppendAllLines (input, content);
+            File.AppendAllLines (path, content);
        
 
             Console.WriteLine("item added");
