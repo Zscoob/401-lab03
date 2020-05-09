@@ -60,8 +60,17 @@ namespace Lab03
         {
             
 
-            string response = File.ReadAllText(input);
-           
+            string[] listArray = File.ReadAllLines(input);
+
+            //Converts Array into one string.
+            string response = "";
+            foreach(string foodItem in listArray)
+            {
+                response += $"{foodItem} ";
+            }
+
+            //takes off trailing whitespace
+            response = response.Trim();
           
             return response;
         }

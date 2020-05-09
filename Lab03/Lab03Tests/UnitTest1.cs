@@ -15,10 +15,9 @@ namespace Lab03Tests
         {
             //Arrange
             string path = @"Assets/readTest.txt";
-            string food = "I need: nutella, salad, milk, eggs, bacon";
             string[] foodArray = new string[5] { "nutella", "salad", "milk", "eggs", "bacon" };
             File.WriteAllLines(path, foodArray);
-            string expected = "nutella\r\nsalad\r\nmilk\r\neggs\r\nbacon\r\n";
+            string expected = "nutella salad milk eggs bacon";
 
             //act
             string result = NomsList.ViewList(path);
