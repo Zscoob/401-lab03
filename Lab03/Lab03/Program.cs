@@ -35,14 +35,16 @@ namespace Lab03
             }
             else if (result == "2")
             {
-                Console.WriteLine("Enter you happy nomnom (>^.^)>");
-                string[] content = new string[] { Console.ReadLine() };
+                Console.WriteLine("Enter a new happy nomnom  (>^.^)> to add to the list");
+                string content =  Console.ReadLine();
                 AddItem(filePath, content);
                 return true;
             }
             else if (result == "3")
             {
-                DelItem();
+                Console.WriteLine("Which sad nomnom  (>^_^)> do you want to remove from the list");
+                string delInput = Console.ReadLine(); 
+                DelItem(filePath, delInput);
                 return true;
             }
             else if (result == "4")
@@ -74,11 +76,10 @@ namespace Lab03
           
             return response;
         }
-        public static void AddItem(string path, string[] content)
+        public static void AddItem(string path, string content)
         {
-            //Console.Clear();
-            // Console.WriteLine("Enter an Item: ")
-            File.AppendAllLines (path, content);
+           
+            File.AppendAllText (path, content);
        
 
             Console.WriteLine("item added");
@@ -87,9 +88,12 @@ namespace Lab03
 
 
         }
-        public static void DelItem()
+        public static void DelItem(string path, string itemToBeNotEaten)
         {
-            Console.Clear();
+            string[] intialArray = File.ReadAllLines(path);
+            string[] filteredArray = Array.FindAll(intialArray, nomnom => nomnom != itemToBeNotEaten);
+            File.WriteAllLines(path, filteredArray);
+            
         }
     }
 }

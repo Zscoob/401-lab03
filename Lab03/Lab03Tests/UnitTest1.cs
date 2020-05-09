@@ -29,19 +29,41 @@ namespace Lab03Tests
 
 
         [Fact]
+        //testing to see if the method can add an item
         public void CanWriteGood()
         {
+            //Arrange
             string path = @"Assets/append.txt";
             string[] lists = new string[] { "ayyyy" };
             File.WriteAllLines(path, lists);
-            string[] woo = new string[] { "pies" };
+            string woo = "pies";
+
+            //Act
             NomsList.AddItem(path, woo);
             string[] lolol = new string[] { "ayyyy", "pies" };
             string[] result = File.ReadAllLines(path);
+
+            //Assert
             Assert.Equal(lolol, result);
         }
-        
-        //public void CanEraseGood()
+
+        [Fact]
+        public void CanEraseGood()
+        {
+            //Arrange
+            string path = @"Assets/deleteTest.txt";
+            string[] foodArray = new string[5] { "nutella", "salad", "milk", "eggs", "bacon" };
+            File.WriteAllLines(path, foodArray);
+            string expected = "nutella milk eggs bacon";
+
+            //Act
+            NomsList.DelItem(path, "salad");
+            string result = NomsList.ViewList(path);
+
+
+            //Assert
+            Assert.Equal(expected, result);
+        }
 
     }
 }
