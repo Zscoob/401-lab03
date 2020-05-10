@@ -16,7 +16,7 @@ namespace Lab03
             string errorFilePath = @"Assets/errorLog.txt";
             string[] errorStart = new string[] { "Error log:" };
             File.WriteAllLines(errorFilePath, errorStart);
-
+            Console.WriteLine("Welcome to your favorite nomnom list!");
             bool displayMenu = true;
             while (displayMenu == true)
             {
@@ -40,7 +40,7 @@ namespace Lab03
           
             if (result == "1")
             {
-               
+                Console.WriteLine("Your Favorite NomNoms");
                 Console.WriteLine(ViewList(filePath));
                 return true;
             }
