@@ -7,6 +7,11 @@ namespace Lab03
     {
         static void Main(string[] args)
         {
+            //setting up the list
+            string filePath = @"Assets/list.txt";
+            string[] starterItem = new string[] { "nutella" };
+            File.WriteAllLines(filePath, starterItem);
+
             bool displayMenu = true;
             while (displayMenu == true)
             {
@@ -18,7 +23,7 @@ namespace Lab03
       
         public static bool MainMenu()
         {
-           // Console.Clear();
+           
             Console.WriteLine("Choose an option");
             Console.WriteLine("1) View List");
             Console.WriteLine("2) Add an item");
@@ -27,6 +32,7 @@ namespace Lab03
 
             string filePath = @"Assets/list.txt";
             string result = Console.ReadLine();
+          
             if (result == "1")
             {
                
@@ -68,7 +74,7 @@ namespace Lab03
             string response = "";
             foreach(string foodItem in listArray)
             {
-                response += $"{foodItem} ";
+                response += $"{foodItem}, ";
             }
 
             //takes off trailing whitespace
@@ -78,8 +84,10 @@ namespace Lab03
         }
         public static void AddItem(string path, string content)
         {
+             
+            string[] newItem = new string[] { content };
            
-            File.AppendAllText (path, content);
+            File.AppendAllLines (path, newItem);
        
 
             Console.WriteLine("item added");
@@ -92,6 +100,7 @@ namespace Lab03
         {
             string[] intialArray = File.ReadAllLines(path);
             string[] filteredArray = Array.FindAll(intialArray, nomnom => nomnom != itemToBeNotEaten);
+            //Console.WriteLine(String.Join(", ", File.ReadAllLines(path)));
             File.WriteAllLines(path, filteredArray);
             
         }
