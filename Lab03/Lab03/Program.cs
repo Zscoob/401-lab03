@@ -7,6 +7,16 @@ namespace Lab03
     {
         static void Main(string[] args)
         {
+            //setting up the list
+            string filePath = @"Assets/list.txt";
+            string[] starterItem = new string[] { "nutella" };
+            File.WriteAllLines(filePath, starterItem);
+
+            //setting up error log
+            string errorFilePath = @"Assets/errorLog.txt";
+            string[] errorStart = new string[] { "Error log:" };
+            File.WriteAllLines(errorFilePath, errorStart);
+            Console.WriteLine("Welcome to your favorite nomnom list!");
             bool displayMenu = true;
             while (displayMenu == true)
             {
@@ -15,20 +25,10 @@ namespace Lab03
         }
 
 
-
-
-
-
-
-
-
-
-
-      
       
         public static bool MainMenu()
         {
-           // Console.Clear();
+           
             Console.WriteLine("Choose an option");
             Console.WriteLine("1) View List");
             Console.WriteLine("2) Add an item");
@@ -37,27 +37,36 @@ namespace Lab03
 
             string filePath = @"Assets/list.txt";
             string result = Console.ReadLine();
+          
             if (result == "1")
             {
-               
+                Console.WriteLine("Your Favorite NomNoms");
                 Console.WriteLine(ViewList(filePath));
                 return true;
             }
             else if (result == "2")
             {
-                Console.WriteLine("Enter you happy nomnom (>^.^)>");
-                string[] content = new string[] { Console.ReadLine() };
+                Console.WriteLine("Enter a new happy nomnom  (>^.^)> to add to the list");
+                string content =  Console.ReadLine();
                 AddItem(filePath, content);
                 return true;
             }
             else if (result == "3")
             {
-                DelItem();
+                Console.WriteLine("Which sad nomnom  (>^_^)> do you want to remove from the list");
+                string delInput = Console.ReadLine(); 
+                DelItem(filePath, delInput);
                 return true;
             }
             else if (result == "4")
             {
                 return false;
+            }
+            else if (result == "error")
+            {
+                string errorFilePath = @"Assets/errorLog.txt";
+                Console.WriteLine(ViewList(errorFilePath));
+                return true;
             }
             else
             {
@@ -68,29 +77,103 @@ namespace Lab03
         
         public static string ViewList(string input)
         {
-            
 
-            string response = File.ReadAllText(input);
-           
-          
-            return response;
+
+            try
+            {
+                string[] listArray = File.ReadAllLines(input);
+
+                //Converts Array into one string.
+                string response = "";
+                foreach (string foodItem in listArray)
+                {
+                    response += $"{foodItem}, ";
+                }
+
+                //takes off trailing whitespace
+                response = response.Trim();
+
+                return response;
+            }
+            catch (DirectoryNotFoundException error)
+            {
+                string errorFilePath = @"Assets/errorLog.txt";
+                string errorString = $"{error}";
+                AddItem(errorFilePath, errorString);
+                return "Invalid Path";
+            }
+            catch (FileNotFoundException error)
+            {
+                string errorFilePath = @"Assets/errorLog.txt";
+                string errorString = $"{error}";
+                AddItem(errorFilePath, errorString);
+                return "File not found";
+            }
+            catch (IOException error)
+            {
+                string errorFilePath = @"Assets/errorLog.txt";
+                string errorString = $"{error}";
+                AddItem(errorFilePath, errorString);
+                return "System IO error";
+            }
         }
-        public static void AddItem(string input, string[] content)
+        public static void AddItem(string path, string content)
         {
-            //Console.Clear();
-            // Console.WriteLine("Enter an Item: ")
-            File.AppendAllLines (input, content);
-       
 
-            Console.WriteLine("item added");
-
-          
+            try
+            {
+                string[] newItem = new string[] { content };
+                File.AppendAllLines(path, newItem);
+                Console.WriteLine("item added");
+            }
+            catch (DirectoryNotFoundException error)
+            {
+                string errorFilePath = @"Assets/errorLog.txt";
+                string errorString = $"{error}";
+                AddItem(errorFilePath, errorString);
+            }
+            catch (FileNotFoundException error)
+            {
+                string errorFilePath = @"Assets/errorLog.txt";
+                string errorString = $"{error}";
+                AddItem(errorFilePath, errorString);
+            }
+            catch (IOException error)
+            {
+                string errorFilePath = @"Assets/errorLog.txt";
+                string errorString = $"{error}";
+                AddItem(errorFilePath, errorString);
+            }
 
 
         }
-        public static void DelItem()
+        public static void DelItem(string path, string itemToBeNotEaten)
         {
-            Console.Clear();
+            try
+            {
+                string[] intialArray = File.ReadAllLines(path);
+                string[] filteredArray = Array.FindAll(intialArray, nomnom => nomnom != itemToBeNotEaten);
+                File.WriteAllLines(path, filteredArray);
+            }
+            catch (DirectoryNotFoundException error)
+            {
+                string errorFilePath = @"Assets/errorLog.txt";
+                string errorString = $"{error}";
+                AddItem(errorFilePath, errorString);
+            }
+            catch (FileNotFoundException error)
+            {
+                string errorFilePath = @"Assets/errorLog.txt";
+                string errorString = $"{error}";
+                AddItem(errorFilePath, errorString);
+            }
+            catch (IOException error)
+            {
+                string errorFilePath = @"Assets/errorLog.txt";
+                string errorString = $"{error}";
+                AddItem(errorFilePath, errorString);
+            }
+
         }
     }
 }

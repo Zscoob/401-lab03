@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03Tests\\Lab03Tests.csproj": {}
+    "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03Tests\\Lab03Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03Tests\\Lab03Tests.csproj": {
+    "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03Tests\\Lab03Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03Tests\\Lab03Tests.csproj",
+        "projectUniqueName": "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03Tests\\Lab03Tests.csproj",
         "projectName": "Lab03Tests",
-        "projectPath": "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03Tests\\Lab03Tests.csproj",
-        "packagesPath": "C:\\Users\\james\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03Tests\\obj\\",
+        "projectPath": "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03Tests\\Lab03Tests.csproj",
+        "packagesPath": "C:\\Users\\bproo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\james\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bproo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03\\Lab03.csproj": {
-                "projectPath": "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03\\Lab03.csproj"
+              "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03\\Lab03.csproj": {
+                "projectPath": "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03\\Lab03.csproj"
               }
             }
           }
@@ -78,17 +78,17 @@
         }
       }
     },
-    "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03\\Lab03.csproj": {
+    "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03\\Lab03.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03\\Lab03.csproj",
+        "projectUniqueName": "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03\\Lab03.csproj",
         "projectName": "Lab03",
-        "projectPath": "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03\\Lab03.csproj",
-        "packagesPath": "C:\\Users\\james\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\james\\Desktop\\deltav401\\401-lab03\\Lab03\\Lab03\\obj\\",
+        "projectPath": "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03\\Lab03.csproj",
+        "packagesPath": "C:\\Users\\bproo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bproo\\Documents\\coding\\code401\\401-lab03\\Lab03\\Lab03\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\james\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bproo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
